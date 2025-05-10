@@ -9,8 +9,7 @@ class Demo {
         int myInt;
         double myDouble;
         std::string myString;
-        std::vector<double> myVec;
-        Demo() : myInt(0), myDouble(2.0), myString("hello"), myVec({1.1, 2.2, 3.3}) {}
+        Demo() : myInt(0), myDouble(2.0), myString("hello") {}
 };
 
 RCPP_MODULE(demo_module) {
@@ -18,6 +17,5 @@ RCPP_MODULE(demo_module) {
         .constructor()
         .field("myInt", &Demo::myInt)
         .field("myDouble", &Demo::myDouble)
-        .field("myString", &Demo::myString)
-        .field("myVec", &Demo::myVec);
+        .field("myString", &Demo::myString);
 }
