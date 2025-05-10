@@ -5,7 +5,7 @@ RCPP_EXPOSED_CLASS(Demo)
 class Demo {
     public:
         int myInt;
-        Demo() {}
+        Demo() : myInt(0) {}
 };
 
 RCPP_MODULE(demo_module) {
