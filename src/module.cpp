@@ -17,7 +17,7 @@ class Demo {
 
 RCPP_MODULE(demo_module) {
     Rcpp::class_<Demo>("Demo")
-        .constructor();
+        .constructor()
         .field("myInt", &Demo::myInt)
         .method("getInt", &Demo::getInt)
         .method("setInt", &Demo::setInt)
