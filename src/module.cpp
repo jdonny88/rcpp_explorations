@@ -5,14 +5,13 @@ RCPP_EXPOSED_CLASS(Demo)
 class Demo {
     public:
         int myInt;
-        std::string myString;
-        Demo() : myInt(0), myString("hello") {}
+        const char* myCString;
+        Demo() : myInt(0), myCString("hello") {}
 
         int getInt() const { return myInt; }
         void setInt(int value) { myInt = value; }
 
-        std::string getString() const { return myString; }
-        void setString(std::string s) { myString = s; }
+        const char* getCString() const { return myCString; }
 };
 
 RCPP_MODULE(demo_module) {
@@ -21,6 +20,5 @@ RCPP_MODULE(demo_module) {
         .field("myInt", &Demo::myInt)
         .method("getInt", &Demo::getInt)
         .method("setInt", &Demo::setInt)
-        .method("getString", &Demo::getString)
-        .method("setString", &Demo::setString);
+        .method("getCString", &Demo::getCString);
 }
