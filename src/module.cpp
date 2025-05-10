@@ -10,8 +10,7 @@ class Demo {
         double myDouble;
         std::string myString;
         std::vector<double> myVec;
-        Rcpp::NumericVector myRcppVec;
-        Demo() : myInt(0), myDouble(2.0), myString("hello"), myVec({1.1, 2.2, 3.3}), myRcppVec(Rcpp::NumericVector::create(1,2,3)) {}
+        Demo() : myInt(0), myDouble(2.0), myString("hello"), myVec({1.1, 2.2, 3.3}) {}
 };
 
 RCPP_MODULE(demo_module) {
@@ -20,6 +19,5 @@ RCPP_MODULE(demo_module) {
         .field("myInt", &Demo::myInt)
         .field("myDouble", &Demo::myDouble)
         .field("myString", &Demo::myString)
-        .field("myVec", &Demo::myVec)
-        .field("myRcppVec", &Demo::myRcppVec);
+        .field("myVec", &Demo::myVec);
 }
