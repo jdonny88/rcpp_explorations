@@ -1,5 +1,7 @@
 #include <Rcpp.h>
 
+RCPP_EXPOSED_CLASS(Demo)
+
 class Demo {
     public:
         Demo() {}
