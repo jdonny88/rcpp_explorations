@@ -10,7 +10,8 @@ class Demo {
         double myDouble;
         std::string myString;
         std::vector<double> myVec;
-        Demo() : myInt(0), myDouble(2.0), myString("hello"), myVec({1.1, 2.2, 3.3}) {}
+        Rcpp::NumericVector myRcppVec;
+        Demo() : myInt(0), myDouble(2.0), myString("hello"), myVec({1.1, 2.2, 3.3}), myRcppVec(Rcpp::NumericVector::create(1,2,3)) {}
 };
 
 RCPP_MODULE(demo_module) {
