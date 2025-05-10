@@ -11,7 +11,7 @@ class Demo {
         int getInt() const { return myInt; }
         void setInt(int value) { myInt = value; }
 
-        const char* getCString() const { return myCString; }
+        std::string getCString() const { return std::string(myCString); }
 };
 
 RCPP_MODULE(demo_module) {
