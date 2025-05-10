@@ -5,13 +5,13 @@ RCPP_EXPOSED_CLASS(Demo)
 class Demo {
     public:
         int myInt;
-        Rcpp::NumericVector rvec;
-        Demo() : myInt(0), rvec(Rcpp::NumericVector::create(1,2,3)) {}
+        std::vector<double> values;
+        Demo() : myInt(0), values({1.0,2.0,3.0}) {}
 
         int getInt() const { return myInt; }
         void setInt(int value) { myInt = value; }
 
-        Rcpp::NumericVector getVec() {return rvec; }
+        Rcpp::NumericVector getWrappedVec() {return Rcpp::wrap(values); }
 };
 
 RCPP_MODULE(demo_module) {
@@ -20,5 +20,5 @@ RCPP_MODULE(demo_module) {
         .field("myInt", &Demo::myInt)
         .method("getInt", &Demo::getInt)
         .method("setInt", &Demo::setInt)
-        .method("getVec", &Demo::getVec);
+        .method("getWrappedVec", &Demo::getWrappedVec);
 }
