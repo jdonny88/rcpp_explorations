@@ -20,5 +20,6 @@ RCPP_MODULE(demo_module) {
         .field("myInt", &Demo::myInt)
         .field("myDouble", &Demo::myDouble)
         .field("myString", &Demo::myString)
-        .field("myVec", &Demo::myVec);
+        .field("myVec", &Demo::myVec)
+        .field("myRcppVec", &Demo::myRcppVec);
 }
