@@ -1,1 +1,11 @@
-Package: test
+Package: rcppcrashdemo
+Title: Minimal Rcpp Crash Repro Package
+Version: 0.0.1
+Authors@R: person("Debug", "Tester", email = "debug@example.com", role = c("aut", "cre"))
+Description: Reproduces Rcpp ABI crash when mixing Rcpp modules compiled under different R versions.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Imports: Rcpp
+LinkingTo: Rcpp
+SystemRequirements: C++11
